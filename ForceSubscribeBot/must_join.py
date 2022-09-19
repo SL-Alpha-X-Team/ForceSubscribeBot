@@ -22,7 +22,7 @@ async def must_join_channel(bot: Client, msg: Message):
                     f"ʏᴏᴜ ᴍᴜꜱᴛ ᴊᴏɪɴ [ᴛʜɪꜱ ᴄʜᴀɴɴᴇʟ]({link}) ᴛᴏ ᴜꜱᴇ ᴍᴇ 👀 ᴀꜰᴛᴇʀ ᴊᴏɪɴɪɴɢ ᴄʟɪᴄᴋ ᴛʀʏ ᴀɢᴀɪɴ ⚡️",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup([
-                        [InlineKeyboardButton("ᴊᴏɪɴ ɴᴏᴡ ⚡", url=link)]
+                        [InlineKeyboardButton("ᴊᴏɪɴ ɴᴏᴡ ⚡", url=link)],
                         [InlineKeyboardButton(text = 'ᴛʀʏ ᴀɢᴀɪɴ ↺', callback_data = "start")]
                     ])
                 )
