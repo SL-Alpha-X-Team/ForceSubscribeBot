@@ -31,12 +31,12 @@ async def fsub(bot, msg: Message):
             bot_chat_member = await bot.get_chat_member(to_be_chat, bot_id)
         except (UsernameInvalid, PeerIdInvalid):
             await msg.reply(
-                "😶 Unsuccessful :( \n\nPossible reasons could be: \n\n"
+                "**😶 Unsuccessful :(** \n\nPossible reasons could be: \n\n"
                 "👀 I haven't been added there. \n"
                 "👀 The provided chat_id/username is invalid. \n"
                 "👀 I have been demoted there. \n"
                 "👀 You have provided link instead of username/chat_id. \n\n"
-                "Please re-check all three and try again! "
+                "__Please re-check all three and try again!__ "
                 "If the problem persists, try demoting and promoting again."
             )
             return
@@ -44,11 +44,11 @@ async def fsub(bot, msg: Message):
             await msg.reply(f"Seriously? \n\n{str(e)}")
             return
         except UserNotParticipant:
-            await msg.reply(f"I haven't been added there.")
+            await msg.reply(f"😶 I haven't been added there.")
             return
         if bot_chat_member.status == "administrator":
             to_be_chat_id = (await bot.get_chat(to_be_chat)).id
             await change_force_chat(chat_id, to_be_chat_id)
-            await msg.reply("Successful. Now I'll mute people who haven't joined that chat. \n\nUse /settings to change settings.")
+            await msg.reply("**⚡Successful. Now I'll mute people who haven't joined that chat.** \n\n**Use /settings to change settings.**")
         else:
-            await msg.reply("Please make me admin there and then try again !")
+            await msg.reply("**😶 Please make me admin there and then try again !**")
